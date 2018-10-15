@@ -87,6 +87,15 @@ class App extends React.Component {
               onChange={this.handleImputExVat}
               placeholder="SEK exklusive moms" />
           </label>
+          <br />
+          <label>
+          Momssumma (kr):
+            <input
+              name="vatSum"
+              type="number"
+              value={this.state.incVat - this.state.exVat}
+              placeholder="Momssumma" />
+          </label>
         </form>
       </div>
     )

@@ -3,3 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+form{
+  padding: 40px;
+  line-height: 1.8;
+}
+
+input[type=number]:focus {
+  background-color: #fffaaa;
+  padding-left: 5px;
+  outline: none;
+}
+
+input[type=number] {
+  padding-left: 5px;
+  height: 18px;
+  line-height: 2;
+}
