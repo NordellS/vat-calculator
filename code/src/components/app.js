@@ -7,8 +7,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       vatRate: 25,
-      incVat: 0,
-      exVat: 0
+      incVat: "",
+      exVat: ""
     }
   }
 
@@ -91,6 +91,7 @@ class App extends React.Component {
           <label>
           Momssumma (kr):
             <input
+              readOnly
               name="vatSum"
               type="number"
               value={this.state.incVat - this.state.exVat}
