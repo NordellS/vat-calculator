@@ -12,7 +12,7 @@ class App extends React.Component {
     }
   }
 
-  handleInput = (event) => {
+  handleProcentageChange = (event) => {
     this.setState({
       vatRate: parseInt(event.target.value),
       incVat: 0,
@@ -24,7 +24,6 @@ class App extends React.Component {
     this.setState({
       exVat: incVatToExtVat(this.state.vatRate, parseInt(event.target.value)),
       incVat: parseInt(event.target.value),
-      vatSum: parseInt(event.target.value)
     })
   }
 
@@ -40,34 +39,35 @@ class App extends React.Component {
     return (
       <div>
         <form>
-          <div>
-            <label htmlFor="vat-rate-1">25%</label>
-            <input
-              id="vat-rate-1"
-              type="radio"
-              value="25%"
-              checked={this.state.vatRate === 25}
-              onChange={this.handleInput} />
+          <div className="vatRateContainer">
+            <div className="vatRate">
+              <input
+                id="vat-rate-1"
+                type="radio"
+                value="25%"
+                checked={this.state.vatRate === 25}
+                onChange={this.handleProcentageChange} />
+              <label htmlFor="vat-rate-1">25%</label>
+            </div>
+            <div className="vatRate">
+              <input
+                id="vat-rate-2"
+                type="radio"
+                value="12%"
+                checked={this.state.vatRate === 12}
+                onChange={this.handleProcentageChange} />
+              <label htmlFor="vat-rate-2">12%</label>
+            </div>
+            <div className="vatRate">
+              <input
+                id="vat-rate-3"
+                type="radio"
+                value="6%"
+                checked={this.state.vatRate === 6}
+                onChange={this.handleProcentageChange} />
+              <label htmlFor="vat-rate-3">6%</label>
+            </div>
           </div>
-          <div>
-            <label htmlFor="vat-rate-2">12%</label>
-            <input
-              id="vat-rate-2"
-              type="radio"
-              value="12%"
-              checked={this.state.vatRate === 12}
-              onChange={this.handleInput} />
-          </div>
-          <div>
-            <label htmlFor="vat-rate-3">6%</label>
-            <input
-              id="vat-rate-3"
-              type="radio"
-              value="6%"
-              checked={this.state.vatRate === 6}
-              onChange={this.handleInput} />
-          </div>
-          <br />
           <label>
           Inklusive moms (kr):
             <input
@@ -75,7 +75,7 @@ class App extends React.Component {
               type="number"
               value={this.state.incVat}
               onChange={this.handleImputIncVat}
-              placeholder="SEK inklusive moms" />
+              placeholder="SEK inkl. moms" />
           </label>
           <br />
           <label>
@@ -85,7 +85,7 @@ class App extends React.Component {
               type="number"
               value={this.state.exVat}
               onChange={this.handleImputExVat}
-              placeholder="SEK exklusive moms" />
+              placeholder="SEK exkl. moms" />
           </label>
           <br />
           <label>

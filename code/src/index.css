@@ -1,22 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+.vatRateContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.vatRate{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  color: #FA9514;
 }
 
 form{
-  padding: 40px;
-  line-height: 1.8;
+  padding: 60px 10px 20px;
+  line-height: 2;
+}
+
+input[type=number] {
+  height: 17px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #FA9514;
 }
 
 input[type=number]:focus {
   background-color: #fffaaa;
-  padding-left: 5px;
   outline: none;
 }
 
-input[type=number] {
-  padding-left: 5px;
-  height: 18px;
-  line-height: 2;
+::placeholder{
+  color: #C2C2C2;
 }
